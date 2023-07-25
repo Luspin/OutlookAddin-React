@@ -10,6 +10,24 @@ function App() {
   const buttonClicked = () => {
     setCount(count + 1)
     console.log('Button was clicked! The value of "count" is now: ' + count);
+
+    // send GET request
+    var xhr = new XMLHttpRequest();
+
+    xhr.open('GET', 'https://oam.lusp.in:8443/')
+
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        // Process the response data
+        console.log(xhr.responseText);
+      } else {
+        // Handle errors
+        console.error('Request failed. Status: ', xhr.status);
+      }
+    };
+
+    xhr.send();
+
   }
 
   return (
@@ -28,7 +46,7 @@ function App() {
           Learn React
         </a>
         <div>
-          <button id="clickerButton" onClick={buttonClicked} type="button">{`Button clicked: ${count}`}</button>
+          <button id="clickerButton" onClick={buttonClicked} type="button">{`Button clicker: ${count}`}</button>
         </div>
       </header>
     </div>
