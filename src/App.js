@@ -26,7 +26,7 @@ function App() {
       }
     };
 
-    xhr.send();
+    // xhr.send();
 
   }
 
@@ -46,7 +46,7 @@ function App() {
           Learn React
         </a>
         <div>
-          <button id="clickerButton" onClick={buttonClicked} type="button">{`Button clicker: ${count}`}</button>
+          <button id="clickerButton" onClick={buttonClicked} type="button">{`Button clicker_: ${count}`}</button>
         </div>
       </header>
     </div>
